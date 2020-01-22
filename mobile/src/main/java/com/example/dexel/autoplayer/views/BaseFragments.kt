@@ -1,11 +1,9 @@
 package com.example.dexel.autoplayer.views
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import com.example.dexel.autoplayer.viewModels.MusicServiceViewModel
-import com.example.dexel.autoplayer.viewModels.ViewModelFactory
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 
@@ -14,7 +12,7 @@ abstract class BaseMusicFragment: DaggerFragment(){
         val TAG = BaseMusicFragment::class.java.simpleName
     }
     @Inject
-    internal lateinit var factory: ViewModelFactory
+    internal lateinit var factory: ViewModelProvider.Factory
 
     protected val viewModel by activityViewModels<MusicServiceViewModel> {factory}
 

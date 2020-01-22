@@ -12,9 +12,9 @@ abstract class FragmentModule {
     @ContributesAndroidInjector(modules = [ViewModelBuilder::class])
     internal abstract fun providesBaseMusicFragment(): BaseMusicFragment
 
-    @ContributesAndroidInjector
+    @ContributesAndroidInjector(modules = [ViewModelBuilder::class])
     internal abstract fun providesSongFragment(): SongFragment
 
-    @ContributesAndroidInjector
+    @ContributesAndroidInjector(modules = [ViewModelBuilder::class])
     internal abstract fun providesPlaybackFragment(): PlaybackFragment
 }

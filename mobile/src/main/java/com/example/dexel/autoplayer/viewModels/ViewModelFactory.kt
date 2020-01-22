@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import dagger.Binds
 import dagger.MapKey
 import dagger.Module
+import dagger.multibindings.IntoMap
 import javax.inject.Inject
 import javax.inject.Provider
 import kotlin.reflect.KClass
@@ -19,6 +20,11 @@ class ViewModelFactory @Inject constructor(
 
 @Module
 abstract class ViewModelBuilder {
+    @Binds
+    @IntoMap
+    @ViewModelKey(MusicServiceViewModel::class)
+    abstract fun bindViewModel(viewmodel: MusicServiceViewModel): ViewModel
+
     @Binds
     abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory
 }

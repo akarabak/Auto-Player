@@ -14,14 +14,11 @@ import android.support.v4.media.session.PlaybackStateCompat
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import com.example.dexel.autoplayer.models.util.metadataToDetails
 import com.example.dexel.autoplayer.services.MyMusicService
 import javax.inject.Inject
-import androidx.paging.DataSource
 import androidx.paging.PositionalDataSource
-import com.example.dexel.autoplayer.MainActivity
 
 class MediaBrowserWrapper @Inject constructor(
         private val application: Application
